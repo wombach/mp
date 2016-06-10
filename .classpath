@@ -11,6 +11,5 @@
 			<attribute name="owner.project.facets" value="jpt.jaxb"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="bpmn-jaxb-model-4.9.1.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
