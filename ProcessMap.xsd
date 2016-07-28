@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.example.org/ProcessMapManual" elementFormDefault="qualified">
+
+
+	<xs:complexType name="FrequencyType">
+		<xs:attribute type="xs:int" name="total" use="optional" />
+		<xs:attribute type="xs:int" name="case" use="optional" />
+		<xs:attribute type="xs:int" name="start" use="optional" />
+		<xs:attribute type="xs:int" name="end" use="optional" />
+		<xs:attribute type="xs:int" name="maxRepetitions" use="optional" />
+	</xs:complexType>
+	<xs:complexType name="DurationType">
+		<xs:attribute type="xs:long" name="total" use="optional" />
+		<xs:attribute type="xs:long" name="min" use="optional" />
+		<xs:attribute type="xs:long" name="max" use="optional" />
+		<xs:attribute type="xs:long" name="mean" use="optional" />
+		<xs:attribute type="xs:long" name="median" use="optional" />
+	</xs:complexType>
+	<xs:complexType name="LayoutType">
+		<xs:attribute type="xs:float" name="x" use="optional" />
+		<xs:attribute type="xs:float" name="y" use="optional" />
+		<xs:attribute type="xs:float" name="width" use="optional" />
+		<xs:attribute type="xs:float" name="height" use="optional" />
+		<xs:attribute type="xs:string" name="curve" use="optional" />
+		<xs:attribute type="xs:float" name="labelX" use="optional" />
+		<xs:attribute type="xs:float" name="labelY" use="optional" />
+	</xs:complexType>
+	<xs:complexType name="NodeType">
+		<xs:sequence>
+			<xs:element name="Frequency" type="FrequencyType" />
+			<xs:element name="Duration" type="DurationType" />
+			<xs:element name="Layout" type="LayoutType" />
+		</xs:sequence>
+		<xs:attribute type="xs:int" name="index" use="optional" />
+		<xs:attribute type="xs:string" name="activity" use="optional" />
+	</xs:complexType>
+		<xs:complexType name="StartNodeType">
+			<xs:sequence>
+				<xs:element name="Layout" type="LayoutType"/>
+			</xs:sequence>
+			<xs:attribute type="xs:int" name="index" />
+		</xs:complexType>
+		<xs:complexType name="EndNodeType">
+			<xs:sequence>
+				<xs:element name="Layout" type="LayoutType"/>
+			</xs:sequence>
+			<xs:attribute type="xs:int" name="index" />
+		</xs:complexType>
+		<xs:complexType name="EdgeType">
+			<xs:sequence>
+				<xs:element name="Frequency" type="FrequencyType" />
+			<xs:element name="Duration" type="DurationType" />
+			<xs:element name="Layout" type="LayoutType" />
+			</xs:sequence>
+			<xs:attribute type="xs:int" name="sourceIndex" use="optional" />
+			<xs:attribute type="xs:int" name="targetIndex" use="optional" />
+			<xs:attribute type="xs:string" name="type" use="optional" />
+		</xs:complexType>
+		<xs:complexType name="NodesType">
+			<xs:sequence>
+				<xs:element name="Node" type="NodeType" maxOccurs="unbounded" minOccurs="0" />
+				<xs:element name="StartNode" type="StartNodeType"/>
+				<xs:element name="EndNode" type="EndNodeType"/>
+			</xs:sequence>
+			<xs:attribute type="xs:int" name="size" />
+		</xs:complexType>
+		<xs:complexType name="EdgesType">
+			<xs:sequence>
+				<xs:element name="Edge" type="EdgeType" maxOccurs="unbounded" minOccurs="0" />
+			</xs:sequence>
+			<xs:attribute type="xs:int" name="size" />
+		</xs:complexType>
+		<xs:complexType name="ProcessMapType">
+			<xs:sequence>
+				<xs:element name="Layout" type="LayoutType"/>
+				<xs:element name="Nodes" type="NodesType"/>
+				<xs:element name="Edges" type="EdgesType"/>
+			</xs:sequence>
+			<xs:attribute type="xs:int" name="numNodes" />
+			<xs:attribute type="xs:float" name="nodeThreshold" />
+			<xs:attribute type="xs:float" name="edgeThreshold" />
+			<xs:attribute type="xs:string" name="discoVersion" />
+		</xs:complexType>
+
+	<xs:element name="ProcessMap" type="ProcessMapType" />
+</xs:schema>
