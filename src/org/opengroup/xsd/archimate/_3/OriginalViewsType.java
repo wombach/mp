@@ -8,12 +8,6 @@
 
 package org.opengroup.xsd.archimate._3;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlSeeAlso;
-import javax.xml.bind.annotation.XmlType;
-
-
 /**
  * 
  *                 This is a container for all of the Views in the model.
@@ -37,13 +31,13 @@ import javax.xml.bind.annotation.XmlType;
  * 
  * 
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "viewpoints"
-})
-@XmlSeeAlso({
-    ViewsType.class
-})
+//@XmlAccessorType(XmlAccessType.FIELD)
+//@XmlType(name = "", propOrder = {
+//    "viewpoints"
+//})
+//@XmlSeeAlso({
+//    ViewsType.class
+//})
 public class OriginalViewsType {
 
     protected ViewpointsType viewpoints;

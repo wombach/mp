@@ -44,7 +44,6 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "NamedReferenceableType")
 @XmlSeeAlso({
-    OriginalModelType.class,
     PropertyDefinitionType.class,
     ViewpointType.class,
     ViewType.class

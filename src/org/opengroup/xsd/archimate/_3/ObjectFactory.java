@@ -624,14 +624,7 @@ public class ObjectFactory {
         return new AllowedElementTypeType();
     }
 
-    /**
-     * Create an instance of {@link OriginalModelType }
-     * 
-     */
-    public OriginalModelType createOriginalModelType() {
-        return new OriginalModelType();
-    }
-
+ 
     /**
      * Create an instance of {@link Contract }
      * 
@@ -640,14 +633,7 @@ public class ObjectFactory {
         return new Contract();
     }
 
-    /**
-     * Create an instance of {@link OriginalViewsType }
-     * 
-     */
-    public OriginalViewsType createOriginalViewsType() {
-        return new OriginalViewsType();
-    }
-
+    
     /**
      * Create an instance of {@link Equipment }
      * 

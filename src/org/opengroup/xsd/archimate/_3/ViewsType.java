@@ -45,11 +45,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ViewsType", propOrder = {
-    "diagrams"
+		"viewpoints",
+		"diagrams"
 })
 public class ViewsType
-    extends OriginalViewsType
 {
+    protected ViewpointsType viewpoints;
+
+    /**
+     * Gets the value of the viewpoints property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ViewpointsType }
+     *     
+     */
+    public ViewpointsType getViewpoints() {
+        return viewpoints;
+    }
+
+    /**
+     * Sets the value of the viewpoints property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ViewpointsType }
+     *     
+     */
+    public void setViewpoints(ViewpointsType value) {
+        this.viewpoints = value;
+    }
 
     protected DiagramsType diagrams;
 

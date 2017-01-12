@@ -18,6 +18,8 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 
+import org.eclipse.persistence.oxm.annotations.XmlDiscriminatorNode;
+
 
 /**
  * 
@@ -63,6 +65,7 @@ import javax.xml.bind.annotation.XmlType;
     Line.class,
     SourcedConnectionType.class
 })
+//@XmlDiscriminatorNode("@@type")
 public abstract class ConnectionType
     extends ViewConceptType
 {

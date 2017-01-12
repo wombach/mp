@@ -8,8 +8,12 @@
 
 package org.opengroup.xsd.archimate._3;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -53,13 +57,199 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ModelType", propOrder = {
-    "views"
+		 "properties",
+		    "metadata",
+		    "elements",
+		    "relationships",
+		    "organizations",
+		    "propertyDefinitions",
+		    "views"
 })
-public class ModelType
-    extends OriginalModelType
-{
 
+public class ModelType extends NamedReferenceableType
+{
+    protected PropertiesType properties;
+    protected MetadataType metadata;
+    protected ElementsType elements;
+    protected RelationshipsType relationships;
+    protected List<OrganizationsType> organizations;
+    protected PropertyDefinitionsType propertyDefinitions;
+    @XmlAttribute(name = "version")
+    protected String version;
     protected ViewsType views;
+
+    /**
+     * Gets the value of the properties property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link PropertiesType }
+     *     
+     */
+    public PropertiesType getProperties() {
+        return properties;
+    }
+
+    /**
+     * Sets the value of the properties property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link PropertiesType }
+     *     
+     */
+    public void setProperties(PropertiesType value) {
+        this.properties = value;
+    }
+
+    /**
+     * Gets the value of the metadata property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link MetadataType }
+     *     
+     */
+    public MetadataType getMetadata() {
+        return metadata;
+    }
+
+    /**
+     * Sets the value of the metadata property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link MetadataType }
+     *     
+     */
+    public void setMetadata(MetadataType value) {
+        this.metadata = value;
+    }
+
+    /**
+     * Gets the value of the elements property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ElementsType }
+     *     
+     */
+    public ElementsType getElements() {
+        return elements;
+    }
+
+    /**
+     * Sets the value of the elements property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ElementsType }
+     *     
+     */
+    public void setElements(ElementsType value) {
+        this.elements = value;
+    }
+
+    /**
+     * Gets the value of the relationships property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link RelationshipsType }
+     *     
+     */
+    public RelationshipsType getRelationships() {
+        return relationships;
+    }
+
+    /**
+     * Sets the value of the relationships property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link RelationshipsType }
+     *     
+     */
+    public void setRelationships(RelationshipsType value) {
+        this.relationships = value;
+    }
+
+    /**
+     * Gets the value of the organizations property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the organizations property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getOrganizations().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link OrganizationsType }
+     * 
+     * 
+     */
+    public List<OrganizationsType> getOrganizations() {
+        if (organizations == null) {
+            organizations = new ArrayList<OrganizationsType>();
+        }
+        return this.organizations;
+    }
+
+    /**
+     * Gets the value of the propertyDefinitions property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link PropertyDefinitionsType }
+     *     
+     */
+    public PropertyDefinitionsType getPropertyDefinitions() {
+        return propertyDefinitions;
+    }
+
+    /**
+     * Sets the value of the propertyDefinitions property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link PropertyDefinitionsType }
+     *     
+     */
+    public void setPropertyDefinitions(PropertyDefinitionsType value) {
+        this.propertyDefinitions = value;
+    }
+
+    /**
+     * Gets the value of the version property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getVersion() {
+        return version;
+    }
+
+    /**
+     * Sets the value of the version property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setVersion(String value) {
+        this.version = value;
+    }
 
     /**
      * Gets the value of the views property.
