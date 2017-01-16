@@ -112,8 +112,6 @@ public class ElementType {
     protected List<LangStringType> label;
     protected List<LangStringType> documentation;
     protected PropertiesType properties;
-    @XmlAnyElement(lax = true)
-    protected List<Object> any;
     @XmlAttribute(name = "identifier", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlID
@@ -121,7 +119,9 @@ public class ElementType {
     protected String identifier;
     @XmlAnyAttribute
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
-
+    @XmlAnyElement(lax = true)
+    protected List<Object> any;
+   
     /**
      * Gets the value of the label property.
      * 

@@ -79,8 +79,6 @@ public class OrganizationType {
     @XmlElement(name = "documentation")
     protected List<PreservedLangStringType> documentationGroup;
     protected List<OrganizationType> item;
-    @XmlAnyElement(lax = true)
-    protected List<Object> any;
     @XmlAttribute(name = "identifierRef")
     @XmlIDREF
     @XmlSchemaType(name = "IDREF")
@@ -92,7 +90,9 @@ public class OrganizationType {
     protected String identifier;
     @XmlAnyAttribute
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
-
+    @XmlAnyElement(lax = true)
+    protected List<Object> any;
+    
     /**
      * Gets the value of the labelGroup property.
      * 

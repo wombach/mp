@@ -85,8 +85,6 @@ public class NodeType {
     protected PropertiesType properties;
     protected StyleType style;
     protected List<NodeType> node;
-    @XmlAnyElement(lax = true)
-    protected List<Object> any;
     @XmlAttribute(name = "identifier", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlID
@@ -108,7 +106,9 @@ public class NodeType {
     protected String type;
     @XmlAnyAttribute
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
-
+    @XmlAnyElement(lax = true)
+    protected List<Object> any;
+   
     /**
      * Gets the value of the label property.
      * 

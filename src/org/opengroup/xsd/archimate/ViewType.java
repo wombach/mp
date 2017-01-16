@@ -72,8 +72,6 @@ public class ViewType {
     protected PropertiesType properties;
     protected List<NodeType> node;
     protected List<ConnectionType> connection;
-    @XmlAnyElement(lax = true)
-    protected List<Object> any;
     @XmlAttribute(name = "identifier", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlID
@@ -83,7 +81,9 @@ public class ViewType {
     protected ViewpointsEnum viewpoint;
     @XmlAnyAttribute
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
-
+    @XmlAnyElement(lax = true)
+    protected List<Object> any;
+    
     /**
      * Gets the value of the label property.
      * 

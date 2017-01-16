@@ -74,8 +74,6 @@ public class ItemType {
     protected List<LangStringType> label;
     protected List<LangStringType> documentation;
     protected List<ItemType> item;
-    @XmlAnyElement(lax = true)
-    protected List<Object> any;
     @XmlAttribute(name = "identifier")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlID
@@ -87,7 +85,9 @@ public class ItemType {
     protected Object identifierref;
     @XmlAnyAttribute
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
-
+    @XmlAnyElement(lax = true)
+    protected List<Object> any;
+    
     /**
      * Gets the value of the label property.
      * 

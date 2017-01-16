@@ -99,8 +99,6 @@ public class ModelType {
     protected List<OrganizationType> organization;
     protected PropertiesDefinitionsType propertydefs;
     protected ViewsType views;
-    @XmlAnyElement(lax = true)
-    protected List<Object> any;
     @XmlAttribute(name = "identifier", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlID
@@ -110,7 +108,9 @@ public class ModelType {
     protected String version;
     @XmlAnyAttribute
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
-
+    @XmlAnyElement(lax = true)
+    protected List<Object> any;
+    
     /**
      * Gets the value of the metadata property.
      * 

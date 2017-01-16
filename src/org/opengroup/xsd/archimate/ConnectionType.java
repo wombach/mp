@@ -81,8 +81,6 @@ public class ConnectionType {
     protected PropertiesType properties;
     protected List<BendpointType> bendpoint;
     protected StyleType style;
-    @XmlAnyElement(lax = true)
-    protected List<Object> any;
     @XmlAttribute(name = "identifier", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlID
@@ -102,6 +100,8 @@ public class ConnectionType {
     protected Object target;
     @XmlAnyAttribute
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    @XmlAnyElement(lax = true)
+    protected List<Object> any;
 
     /**
      * Gets the value of the label property.

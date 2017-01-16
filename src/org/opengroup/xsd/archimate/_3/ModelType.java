@@ -14,7 +14,11 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
+
+import org.eclipse.persistence.oxm.annotations.XmlNamedAttributeNode;
+import org.eclipse.persistence.oxm.annotations.XmlNamedObjectGraph;
 
 
 /**
@@ -55,6 +59,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  * 
  */
+
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ModelType", propOrder = {
 		 "properties",
@@ -66,6 +71,7 @@ import javax.xml.bind.annotation.XmlType;
 		    "views"
 })
 
+@XmlRootElement
 public class ModelType extends NamedReferenceableType
 {
     protected PropertiesType properties;
@@ -74,9 +80,9 @@ public class ModelType extends NamedReferenceableType
     protected RelationshipsType relationships;
     protected List<OrganizationsType> organizations;
     protected PropertyDefinitionsType propertyDefinitions;
+    protected ViewsType views;
     @XmlAttribute(name = "version")
     protected String version;
-    protected ViewsType views;
 
     /**
      * Gets the value of the properties property.

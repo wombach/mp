@@ -53,14 +53,14 @@ import javax.xml.bind.annotation.XmlType;
 public class PropertyType {
 
     @XmlElement(required = true)
-    protected List<LangStringType> value;
-    @XmlAnyElement(lax = true)
     protected List<Object> any;
     @XmlAttribute(name = "identifierref", required = true)
     @XmlIDREF
     @XmlSchemaType(name = "IDREF")
     protected Object identifierref;
-
+    protected List<LangStringType> value;
+    @XmlAnyElement(lax = true)
+    
     /**
      * Gets the value of the value property.
      * 
