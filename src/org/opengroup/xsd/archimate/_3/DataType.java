@@ -10,6 +10,7 @@ package org.opengroup.xsd.archimate._3;
 
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -33,7 +34,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlType(name = "DataType")
-@XmlEnum
+@XmlEnum(String.class)
 public enum DataType {
 
     @XmlEnumValue("string")

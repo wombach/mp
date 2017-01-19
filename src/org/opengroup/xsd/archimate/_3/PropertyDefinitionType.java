@@ -11,7 +11,11 @@ package org.opengroup.xsd.archimate._3;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
@@ -27,7 +31,7 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType name="PropertyDefinitionType">
  *   &lt;complexContent>
  *     &lt;extension base="{http://www.opengroup.org/xsd/archimate/3.0/}NamedReferenceableType">
- *       &lt;attribute name="type" use="required" type="{http://www.opengroup.org/xsd/archimate/3.0/}DataType" />
+ *       &lt;attribute name="type2" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;anyAttribute namespace='##other'/>
  *     &lt;/extension>
  *   &lt;/complexContent>
@@ -42,19 +46,18 @@ public class PropertyDefinitionType
     extends NamedReferenceableType
 {
 
-    @XmlAttribute(name = "type", required = true)
-    protected DataType type;
+    @XmlAttribute(name = "type")
+    protected String type2;
 
     /**
      * Gets the value of the type property.
      * 
      * @return
      *     possible object is
-     *     {@link DataType }
-     *     
+     *     {@link String }
      */
-    public DataType getType() {
-        return type;
+    public String getType() {
+        return type2;
     }
 
     /**
@@ -62,11 +65,10 @@ public class PropertyDefinitionType
      * 
      * @param value
      *     allowed object is
-     *     {@link DataType }
-     *     
+     *     {@link String }
      */
-    public void setType(DataType value) {
-        this.type = value;
+    public void setType(String value) {
+        this.type2 = value;
     }
 
 }
