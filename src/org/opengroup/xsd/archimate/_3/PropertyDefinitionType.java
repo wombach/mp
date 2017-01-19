@@ -47,7 +47,7 @@ public class PropertyDefinitionType
 {
 
     @XmlAttribute(name = "type")
-    protected String type2;
+    protected String type;
 
     /**
      * Gets the value of the type property.
@@ -57,7 +57,7 @@ public class PropertyDefinitionType
      *     {@link String }
      */
     public String getType() {
-        return type2;
+        return type;
     }
 
     /**
@@ -68,7 +68,7 @@ public class PropertyDefinitionType
      *     {@link String }
      */
     public void setType(String value) {
-        this.type2 = value;
+        this.type = value;
     }
 
 }
