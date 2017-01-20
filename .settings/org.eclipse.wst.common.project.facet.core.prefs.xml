@@ -1,7 +1,7 @@
 <root>
   <facet id="jpt.jaxb">
     <node name="classgen">
-      <attribute name="package" value="model"/>
+      <attribute name="package" value="org.opengroup.xsd.archimate._3"/>
     </node>
   </facet>
 </root>
