@@ -35,7 +35,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "AllowedElementTypeType")
 public class AllowedElementTypeType {
 
-    @XmlAttribute(name = "type", required = true)
+	@XmlAttribute(namespace="http://www.w3.org/2001/XMLSchema-instance", name="type", required = true)
+//	XmlAttribute(name="type", required = true)
     protected String type;
 
     /**

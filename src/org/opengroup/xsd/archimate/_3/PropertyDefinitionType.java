@@ -42,7 +42,7 @@ public class PropertyDefinitionType
     extends NamedReferenceableType
 {
 
-    @XmlAttribute(name = "type", required = true)
+    @XmlAttribute(namespace="http://www.w3.org/2001/XMLSchema-instance", name = "type", required = true)
     protected DataType type;
 
     /**

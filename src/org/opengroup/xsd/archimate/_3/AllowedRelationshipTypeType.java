@@ -35,7 +35,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "AllowedRelationshipTypeType")
 public class AllowedRelationshipTypeType {
 
-    @XmlAttribute(name = "type", required = true)
+    @XmlAttribute(namespace="http://www.w3.org/2001/XMLSchema-instance", name = "type", required = true)
     protected RelationshipTypeEnum type;
 
     /**

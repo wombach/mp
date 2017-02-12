@@ -50,7 +50,7 @@ public class ModelingNoteType {
 
     @XmlElement(name = "documentation")
     protected List<PreservedLangStringType> documentationGroup;
-    @XmlAttribute(name = "type")
+    @XmlAttribute(namespace="http://www.w3.org/2001/XMLSchema-instance", name = "type")
     protected String type;
 
     /**
