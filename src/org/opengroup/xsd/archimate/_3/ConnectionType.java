@@ -13,10 +13,13 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlIDREF;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
+
+import org.eclipse.persistence.oxm.annotations.XmlDiscriminatorNode;
 
 
 /**
@@ -78,6 +81,7 @@ public abstract class ConnectionType
     @XmlIDREF
     @XmlSchemaType(name = "IDREF")
     protected Object target;
+    
 
     /**
      * Gets the value of the sourceAttachment property.

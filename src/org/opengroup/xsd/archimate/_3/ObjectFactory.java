@@ -336,6 +336,10 @@ public class ObjectFactory {
         return new Aggregation();
     }
 
+    public Connection createConnection() {
+        return new Connection();
+    }
+
     /**
      * Create an instance of {@link PropertiesType }
      * 
@@ -790,6 +794,14 @@ public class ObjectFactory {
      */
     public BusinessProcess createBusinessProcess() {
         return new BusinessProcess();
+    }
+
+    /**
+     * Create an instance of {@link Metric }
+     * 
+     */
+    public Metric createMetric() {
+        return new Metric();
     }
 
     /**

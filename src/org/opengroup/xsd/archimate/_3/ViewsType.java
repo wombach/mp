@@ -38,11 +38,13 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ViewsType", propOrder = {
-    "viewpoints"
+    "viewpoints",
+    "diagrams"
 })
 public class ViewsType {
 
-    protected ViewpointsType viewpoints;
+	protected ViewpointsType viewpoints;
+	protected DiagramsType diagrams;
 
     /**
      * Gets the value of the viewpoints property.
@@ -68,4 +70,28 @@ public class ViewsType {
         this.viewpoints = value;
     }
 
+    /**
+     * Gets the value of the viewpoints property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link DiagramsType }
+     *     
+     */
+	public DiagramsType getDiagrams() {
+		return diagrams;
+	}
+
+    /**
+     * Sets the value of the viewpoints property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link DiagramsType }
+     *     
+     */
+	public void setDiagrams(DiagramsType diagrams) {
+		this.diagrams = diagrams;
+	}
+    
 }

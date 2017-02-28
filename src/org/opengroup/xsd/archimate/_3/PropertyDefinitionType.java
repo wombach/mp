@@ -42,8 +42,9 @@ public class PropertyDefinitionType
     extends NamedReferenceableType
 {
 
-    @XmlAttribute(namespace="http://www.w3.org/2001/XMLSchema-instance", name = "type", required = true)
-    protected DataType type;
+    //XmlAttribute(namespace="http://www.w3.org/2001/XMLSchema-instance", name = "type", required = true)
+	@XmlAttribute(name = "propertyType")
+    protected DataType type2;
 
     /**
      * Gets the value of the type property.
@@ -54,7 +55,7 @@ public class PropertyDefinitionType
      *     
      */
     public DataType getType() {
-        return type;
+        return type2;
     }
 
     /**
@@ -66,7 +67,7 @@ public class PropertyDefinitionType
      *     
      */
     public void setType(DataType value) {
-        this.type = value;
+        this.type2 = value;
     }
 
 }

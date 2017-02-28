@@ -82,4 +82,7 @@ public class Container
         return this.node;
     }
 
+    public boolean isLabel(){
+    	return node==null || node.isEmpty();
+    }
 }

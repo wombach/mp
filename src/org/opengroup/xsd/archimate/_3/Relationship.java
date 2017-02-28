@@ -12,9 +12,12 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlIDREF;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
+
+import org.eclipse.persistence.oxm.annotations.XmlDiscriminatorValue;
 
 
 /**
@@ -48,10 +51,10 @@ public class Relationship
     extends SourcedConnectionType
 {
 
-    @XmlAttribute(name = "relationshipRef", required = true)
+    @XmlAttribute(name = "relationshipRef", required = false)
     @XmlIDREF
     @XmlSchemaType(name = "IDREF")
-    protected Object relationshipRef;
+    protected Object relationshipRef = null;
 
     /**
      * Gets the value of the relationshipRef property.
@@ -77,4 +80,7 @@ public class Relationship
         this.relationshipRef = value;
     }
 
+    public boolean isLine(){
+    	return relationshipRef==null;
+    }
 }

@@ -10,7 +10,10 @@ package org.opengroup.xsd.archimate._3;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
+
+import org.eclipse.persistence.oxm.annotations.XmlDiscriminatorValue;
 
 
 /**
@@ -37,7 +40,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Line")
 public class Line
-    extends ConnectionType
+//    extends ConnectionType
 {
 
 
