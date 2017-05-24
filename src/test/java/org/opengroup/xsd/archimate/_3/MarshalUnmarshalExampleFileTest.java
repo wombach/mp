@@ -75,4 +75,6 @@ public class MarshalUnmarshalExampleFileTest {
 		String expected = "{friends:[{id:123,name:\"Corby Page\"},{id:456,name:\"Carter Page\"}]}";
 		JSONAssert.assertEquals(expected, data, false);
 	}
+	
+	
 }

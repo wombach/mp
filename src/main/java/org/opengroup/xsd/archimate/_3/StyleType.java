@@ -41,6 +41,7 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;/complexType>
  * </pre>
  * 
+ * Document order of fillColor and lineColor is NOT according to schema at the moment; this is to be compliante with Archi version 4
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
