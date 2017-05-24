@@ -49,18 +49,18 @@ public class MarshalUnmarshalExampleFileTest {
 		out.flush();
 		out.close();
 		File file2 = new File("Main5_out.xml");
-//		
-//		Diff diff = DiffBuilder.compare(Input.fromFile(file))
-//				   .withTest(Input.fromFile(file2))
-//				   .withNodeMatcher(new DefaultNodeMatcher(ElementSelectors.byNameAndText))
-//				   .build();
-//		Iterator<Difference> it = diff.getDifferences().iterator();
-//		while(it.hasNext()){
-//			System.out.println(it.next().toString());
-//		}
+		//		
+		//		Diff diff = DiffBuilder.compare(Input.fromFile(file))
+		//				   .withTest(Input.fromFile(file2))
+		//				   .withNodeMatcher(new DefaultNodeMatcher(ElementSelectors.byNameAndText))
+		//				   .build();
+		//		Iterator<Difference> it = diff.getDifferences().iterator();
+		//		while(it.hasNext()){
+		//			System.out.println(it.next().toString());
+		//		}
 		assertThat(file, CompareMatcher.isSimilarTo(file2).ignoreComments().ignoreWhitespace());
-		
-}
+
+	}
 
 	@Test
 	public void given2XMLS_whenIdentical_thenCorrect() {
@@ -75,6 +75,6 @@ public class MarshalUnmarshalExampleFileTest {
 		String expected = "{friends:[{id:123,name:\"Corby Page\"},{id:456,name:\"Carter Page\"}]}";
 		JSONAssert.assertEquals(expected, data, false);
 	}
-	
-	
+
+
 }
