@@ -15,6 +15,8 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlType;
 
+import org.eclipse.persistence.oxm.annotations.XmlDiscriminatorValue;
+
 
 /**
  * 
@@ -41,17 +43,18 @@ import javax.xml.bind.annotation.XmlType;
  * 
  * 
  */
+
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Diagram", propOrder = {
-    "nodes",
-    "connections"
+		"node",
+		"connection"
 })
 public class Diagram
     extends ViewType
 {
 
-    protected List<Container> nodes;
-    protected List<Relationship> connections;
+    protected List<ViewNodeType> node;
+    protected List<ConnectionType> connection;
 
     /**
      * Gets the value of the node property.
@@ -75,11 +78,11 @@ public class Diagram
      * 
      * 
      */
-    public List<Container> getNode() {
-        if (nodes == null) {
-            nodes = new ArrayList<Container>();
+    public List<ViewNodeType> getNode() {
+        if (node == null) {
+            node = new ArrayList<ViewNodeType>();
         }
-        return this.nodes;
+        return this.node;
     }
 
     /**
@@ -100,15 +103,15 @@ public class Diagram
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Relationship }
+     * {@link ConnectionType }
      * 
      * 
      */
-    public List<Relationship> getConnection() {
-        if (connections == null) {
-            connections = new ArrayList<Relationship>();
+    public List<ConnectionType> getConnection() {
+        if (connection == null) {
+            connection = new ArrayList<ConnectionType>();
         }
-        return this.connections;
+        return this.connection;
     }
 
 }

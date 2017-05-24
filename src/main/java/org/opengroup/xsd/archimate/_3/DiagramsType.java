@@ -46,7 +46,7 @@ import javax.xml.bind.annotation.XmlType;
 public class DiagramsType {
 
     @XmlElement(required = true)
-    protected List<Diagram> view;
+    protected List<ViewType> view;
 
     /**
      * Gets the value of the view property.
@@ -66,13 +66,13 @@ public class DiagramsType {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Diagram }
+     * {@link ViewType }
      * 
      * 
      */
-    public List<Diagram> getView() {
+    public List<ViewType> getView() {
         if (view == null) {
-            view = new ArrayList<Diagram>();
+            view = new ArrayList<ViewType>();
         }
         return this.view;
     }

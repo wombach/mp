@@ -45,7 +45,9 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "StyleType", propOrder = {
-
+		"fillColor",
+		"lineColor",
+		"font"
 })
 public class StyleType {
 

@@ -137,6 +137,23 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Diagram }
+     * 
+     */
+    public Diagram createDiagram() {
+      return new Diagram();
+  }
+
+    /**
+     * Create an instance of {@link OtherViewTypeInstance }
+     * 
+     */
+//    public OtherViewTypeInstance createOtherViewTypeInstance() {
+//        return new OtherViewTypeInstance();
+//    }
+
+    
+    /**
      * Create an instance of {@link ConcernType }
      * 
      */
