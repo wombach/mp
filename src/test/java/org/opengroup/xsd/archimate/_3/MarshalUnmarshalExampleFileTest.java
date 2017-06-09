@@ -1,13 +1,13 @@
 package org.opengroup.xsd.archimate._3;
 
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.fail;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -24,12 +24,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.Test;
 import org.skyscreamer.jsonassert.JSONAssert;
-import org.xmlunit.builder.DiffBuilder;
-import org.xmlunit.builder.Input;
-import org.xmlunit.diff.DefaultNodeMatcher;
-import org.xmlunit.diff.Diff;
-import org.xmlunit.diff.Difference;
-import org.xmlunit.diff.ElementSelectors;
 import org.xmlunit.matchers.CompareMatcher;
 
 public class MarshalUnmarshalExampleFileTest {
