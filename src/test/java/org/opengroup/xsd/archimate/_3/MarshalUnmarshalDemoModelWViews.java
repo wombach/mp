@@ -61,8 +61,62 @@ public class MarshalUnmarshalDemoModelWViews {
 //
 //	}
 
-	@Test
+
 	public void givenJsonFile_unmarshalJson_marshalJson_expectFileEqualsResult() throws JAXBException, IOException{
+		JAXBContext jaxbContext =  JAXBContext.newInstance(ModelType.class);
+
+		Map<String, String> namespaces = new HashMap<String, String>();
+		namespaces.put("http://www.opengroup.org/xsd/archimate/3.0/", "");
+		namespaces.put("http://www.opengroup.org/xsd/archimate/3.0/", "ar3");
+		namespaces.put("http://www.w3.org/2001/XMLSchema-instance", "xsi");
+
+//		File file = new File("demo_archimate3.json");
+//		File file = new File("minimal.json");
+		File file = new File("test3_output.json");
+		StreamSource source = new StreamSource(file);
+		Unmarshaller unmarshaller2 = jaxbContext.createUnmarshaller();
+		unmarshaller2.setProperty(UnmarshallerProperties.JSON_NAMESPACE_PREFIX_MAPPER, namespaces);
+		unmarshaller2.setProperty(UnmarshallerProperties.JSON_NAMESPACE_SEPARATOR, '_');
+		unmarshaller2.setProperty(UnmarshallerProperties.MEDIA_TYPE, "application/json");
+		unmarshaller2.setProperty(UnmarshallerProperties.JSON_ATTRIBUTE_PREFIX, "@") ;
+		unmarshaller2.setProperty(UnmarshallerProperties.JSON_INCLUDE_ROOT, true);
+		JAXBElement<ModelType> result = unmarshaller2.unmarshal(source, ModelType.class);
+		ModelType model = (ModelType) result.getValue();
+		
+		List<RelationshipType> dels = new ArrayList<RelationshipType>();
+		List<RelationshipType> rels = model.relationships.relationship;
+		for(RelationshipType rel : rels){
+			if((rel.source == null) && (rel.target == null) )
+				dels.add(rel);
+		}
+		rels.removeAll(dels);
+		List<ViewType> views = model.views.diagrams.view;
+		
+		
+//		jaxbContext =  JAXBContext.newInstance(ModelType.class);
+		Marshaller marshaller = jaxbContext.createMarshaller();
+		marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+//		marshaller.setProperty(MarshallerProperties.NAMESPACE_PREFIX_MAPPER, namespaces);
+//		marshaller.setProperty(MarshallerProperties.JSON_NAMESPACE_SEPARATOR, '_');
+//		marshaller.setProperty(MarshallerProperties.JSON_ATTRIBUTE_PREFIX, "@") ;
+//		marshaller.setProperty(MarshallerProperties.MEDIA_TYPE, "application/json");
+//		marshaller.setProperty(MarshallerProperties.JSON_INCLUDE_ROOT, true);
+		FileWriter out = new FileWriter( "test3_output_result.xml");
+		marshaller.marshal(model, out);
+		out.flush();
+		out.close();
+//		File file2 = new File("demo_archimate3_result.json");
+//		String content = new Scanner(file).useDelimiter("\\Z").next();
+//		String content2 = new Scanner(file2).useDelimiter("\\Z").next();
+//		try {
+//			JSONAssert.assertEquals(content, content2, false);
+//		} catch (JSONException e) {
+//			fail("Should not have thrown any exception");
+//		}
+	}
+
+	@Test
+	public void givenJsonFile_unmarshalJson_marshalXML() throws JAXBException, IOException{
 		JAXBContext jaxbContext =  JAXBContext.newInstance(ModelType.class);
 
 		Map<String, String> namespaces = new HashMap<String, String>();
